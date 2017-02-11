@@ -1,6 +1,7 @@
 package com.care.med.medcare;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -40,14 +41,16 @@ public class ProfileFragmentMain extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
 
         List<String> messages = new ArrayList<>();
-        messages.add("Hello");
-        messages.add("how");
-        messages.add("Are you");
+        messages.add("What is the effect of traumatic brain injury in children");
+        messages.add("Cushing's Syndrome: could analyzing hair confirm analysis");
+        messages.add("Amphetamine use may speed up heart aging");
 
         ListAdapter listAdapter = new ListAdapter(messages);
         recyclerView.setAdapter(listAdapter);
         recyclerView.setLayoutManager(linearLayoutManager);
         listAdapter.notifyDataSetChanged();
+
+
 
         return rootView;
     }
@@ -90,6 +93,13 @@ public class ProfileFragmentMain extends Fragment {
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
             holder.message.setText(messages.get(position));
+            holder.message.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(context, ShowNews.class);
+                    intent.putExtra("message", "dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text ");
+                }
+            });
         }
 
         @Override

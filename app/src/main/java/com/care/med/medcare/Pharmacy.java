@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +39,8 @@ public class Pharmacy extends AppCompatActivity implements SearchView.OnQueryTex
 
         //populate medicines list
         medicines.add(new Medicine(1, "Paracetamol", "Crocin"));
+        medicines.add(new Medicine(2, "Moxiking", "Amoxcyllin"));
+        medicines.add(new Medicine(3, "Limcee", "Calpol"));
 
         ListAdapter listAdapter = new ListAdapter(medicines);
         recyclerView.setAdapter(listAdapter);
@@ -101,7 +104,7 @@ public class Pharmacy extends AppCompatActivity implements SearchView.OnQueryTex
     }
 
     public void addToCart(Medicine medicine){
-        //TODO
+        Toast.makeText(this, "1 item added to cart", Toast.LENGTH_SHORT).show();
     }
 
 
@@ -141,6 +144,12 @@ public class Pharmacy extends AppCompatActivity implements SearchView.OnQueryTex
                 @Override
                 public void onClick(View view) {
                     addToCart(medicines.get(position));
+                }
+            });
+            holder.name.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
                 }
             });
         }

@@ -94,7 +94,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18dp"
-                    android:text="Deseases: Loose Motion, najdflkjlkdsfjlasdkjflskfjdlkfjdslkfjslkdfjlksdj"
+                    android:text="Deseases: Diabetes and High Blood Pressure"
                     android:singleLine="true"/>
 
                 <TextView
@@ -102,7 +102,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18dp"
-                    android:text="Preventions: Something, something, something"
+                    android:text="Preventions: Avoid Oily Food, Regular Exercise"
                     android:singleLine="true"/>
 
                 <TextView
@@ -110,7 +110,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18dp"
-                    android:text="Prescription: daru, ganja, weed, hash, heroine"
+                    android:text="Prescription: Chorous capsule, Glimisave m24"
                     android:singleLine="true"/>
 
             </LinearLayout>

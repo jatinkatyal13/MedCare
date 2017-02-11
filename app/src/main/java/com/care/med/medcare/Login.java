@@ -4,6 +4,7 @@ import com.android.volley.*;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -17,6 +18,9 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -49,11 +53,33 @@ public class Login extends AppCompatActivity {
                 login.setEnabled(false);
                 login.setText("Logging in..");
 
-                //changing the register button
-                register.setEnabled(false);
+
+                if (username == "present@medcare" && password == "password"){
+                    Intent intent = new Intent(Login.this, Home.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(Login.this, "Wrong user name or password!", Toast.LENGTH_SHORT).show();
+                }
 
                 //making the post request
-                makePost("localhost/checkSignIn", params);
+//                Lib.makePost("localhost/checkSignIn", params, Login.this, new Response.Listener<String>() {
+//                    @Override
+//                    public void onResponse(String response) {
+//                        try {
+//                            JSONObject jsonObject = new JSONObject(response);
+//
+//                        } catch (JSONException e) {
+//
+//                        }
+//                    }
+//                }, new Response.ErrorListener() {
+//                    @Override
+//                    public void onErrorResponse(VolleyError error) {
+//
+//                    }
+//                });
 
                 //if failed to execute the post
 
@@ -68,35 +94,7 @@ public class Login extends AppCompatActivity {
 
     }
 
-    //method to make post request with given parameters
-    public void makePost(String url, final Map<String, String> params){
-        Intent intent = new Intent(Login.this, Home.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        intent.putExtra("username", params.get("username"));
-        startActivity(intent);
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                //response contains the response string from the server
 
-                //TODO
-                //for now everything will take to the home with name dev
-
-            }
-        }, new Response.ErrorListener() { //Create an error listener to handle errors appropriately.
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                //This code is executed if there is an error.
-                Log.e("debug", error.toString());
-            }
-        }) {
-            protected Map<String, String> getParams() {
-                return params;
-            }
-        };
-        requestQueue.add(stringRequest);
-    }
 
 
     @Override

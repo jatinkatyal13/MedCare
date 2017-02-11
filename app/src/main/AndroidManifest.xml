@@ -8,6 +8,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <uses-permission android:name="android.permission.CALL_PHONE" />
+        <uses-permission android:name="android.permission.ACTION_CALL" />
+
         <activity
             android:name=".Login"
             android:label="@string/app_name"
@@ -49,6 +52,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.care.med.medcare.Home" />
         </activity>
+        <activity android:name=".ShowNews" />
+        <activity android:name=".ShowMedicine"></activity>
     </application>
 
 </manifest>
