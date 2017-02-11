@@ -46,7 +46,7 @@ public class HomeFragmentMain extends Fragment {
         //List of all the griditems
         final List<GridItem> gridItems = new ArrayList<>();
         gridItems.add(new GridItem("Patient Tracking", getResources().getDrawable(R.drawable.icon), new Intent(context, PatientTracking.class)));
-        gridItems.add(new GridItem("Yur Pharmacy", getResources().getDrawable(R.drawable.icon), new Intent()));
+        gridItems.add(new GridItem("Yur Pharmacy", getResources().getDrawable(R.drawable.icon), new Intent(context, Pharmacy.class)));
         gridItems.add(new GridItem("blood Donation", getResources().getDrawable(R.drawable.icon), new Intent(context, BloodDonation.class)));
         gridItems.add(new GridItem("Healthinator", getResources().getDrawable(R.drawable.icon), new Intent()));
 

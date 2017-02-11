@@ -40,6 +40,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.care.med.medcare.Home" />
         </activity>
+        <activity
+            android:name=".Pharmacy"
+            android:label="@string/title_activity_pharmacy"
+            android:parentActivityName=".Home"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.care.med.medcare.Home" />
+        </activity>
     </application>
 
 </manifest>
