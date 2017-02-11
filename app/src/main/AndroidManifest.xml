@@ -31,6 +31,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.care.med.medcare.Home" />
         </activity>
+        <activity
+            android:name=".PatientTracking"
+            android:label="@string/title_activity_patient_tracking"
+            android:parentActivityName=".Home"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.care.med.medcare.Home" />
+        </activity>
     </application>
 
 </manifest>
